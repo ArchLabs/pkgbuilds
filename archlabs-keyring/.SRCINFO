@@ -1,0 +1,13 @@
+pkgbase = archlabs-keyring
+	pkgdesc = ArchLabs keyring
+	pkgver = 2022.11.11
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/keyring
+	install = archlabs-keyring.install
+	arch = x86_64
+	groups = archlabs
+	license = GPL
+	source = git+https://bitbucket.org/archlabslinux/keyring.git
+	sha256sums = SKIP
+
+pkgname = archlabs-keyring

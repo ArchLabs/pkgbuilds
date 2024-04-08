@@ -1,0 +1,12 @@
+pkgbase = archlabs-scripts
+	pkgdesc = Helper scripts for use in ArchLabs
+	pkgver = 1.4.2
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/scripts
+	arch = x86_64
+	groups = archlabs
+	license = GPL3
+	source = git+https://bitbucket.org/archlabslinux/scripts.git
+	sha256sums = SKIP
+
+pkgname = archlabs-scripts

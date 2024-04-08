@@ -1,0 +1,18 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-wallpapers
+pkgver=1.5.7
+pkgrel=1
+pkgdesc="ArchLabs wallpapers"
+url="https://bitbucket.org/archlabslinux/walls"
+arch=('x86_64')
+groups=('archlabs')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    cd walls/ || return
+    mkdir -p $pkgdir/usr/share/backgrounds/archlabs
+    install -Dm644 *.png $pkgdir/usr/share/backgrounds/archlabs/
+    install -Dm644 *.jpg $pkgdir/usr/share/backgrounds/archlabs/
+}

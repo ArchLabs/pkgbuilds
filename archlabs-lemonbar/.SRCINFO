@@ -1,0 +1,19 @@
+pkgbase = archlabs-lemonbar
+	pkgdesc = A lightweight xcb based bar with ported xft support.
+	pkgver = 1.4
+	pkgrel = 1
+	url = https://gitlab.com/protesilaos/lemonbar-xft
+	arch = x86_64
+	license = MIT
+	depends = libxcb
+	depends = libxft
+	depends = libx11
+	provides = bar-aint-recursive
+	provides = lemonbar
+	conflicts = bar-aint-recursive
+	conflicts = lemonbar
+	conflicts = lemonbar-xft-git
+	source = bar::git+https://gitlab.com/protesilaos/lemonbar-xft.git
+	sha256sums = SKIP
+
+pkgname = archlabs-lemonbar

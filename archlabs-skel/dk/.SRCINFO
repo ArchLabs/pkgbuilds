@@ -1,0 +1,10 @@
+pkgbase = archlabs-skel-dk
+	pkgdesc = dk configuration files for ArchLabs
+	pkgver = 1.1.0
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/skel
+	arch = x86_64
+	source = git+https://bitbucket.org/archlabslinux/skel.git
+	sha256sums = SKIP
+
+pkgname = archlabs-skel-dk

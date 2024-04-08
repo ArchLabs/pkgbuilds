@@ -1,0 +1,20 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-common
+pkgver=1.3.7
+pkgrel=2
+pkgdesc="Common and help files for archlabs-pipemenus"
+url="https://bitbucket.org/archlabslinux/common"
+arch=('x86_64')
+license=('GPL3')
+groups=('archlabs')
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+    cd common/ || return
+    mkdir -p $pkgdir/usr/lib/archlabs/common
+    mkdir -p $pkgdir/usr/share/archlabs/docs
+    install -Dm644 al-include $pkgdir/usr/lib/archlabs/common/
+    install -Dm644 *.txt $pkgdir/usr/share/archlabs/docs/
+}

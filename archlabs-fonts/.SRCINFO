@@ -1,0 +1,11 @@
+pkgbase = archlabs-fonts
+	pkgdesc = Icon patched fonts for ArchLabs
+	pkgver = 1.4.1
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/themes
+	arch = x86_64
+	source = git+https://bitbucket.org/archlabslinux/themes.git
+	sha256sums = SKIP
+
+pkgname = archlabs-fonts
+

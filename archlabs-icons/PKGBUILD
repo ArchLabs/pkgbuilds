@@ -1,0 +1,17 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-icons
+pkgver=1.4
+pkgrel=2
+pkgdesc="A Combination of Paper and Papirus Icons for use in ArchLabs"
+url="https://bitbucket.org/archlabslinux/themes"
+arch=('x86_64')
+groups=('archlabs')
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+    cd themes/Icons/ || return
+    mkdir -p "${pkgdir}/usr/share/icons"
+    cp -rf ArchLabs* "${pkgdir}/usr/share/icons/"
+}

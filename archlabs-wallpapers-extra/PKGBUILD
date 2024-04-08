@@ -1,0 +1,16 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-wallpapers-extra
+pkgver=1.0
+pkgrel=1
+pkgdesc="ArchLabs extra wallpapers"
+url="https://bitbucket.org/archlabslinux/walls-extra"
+arch=('x86_64')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    cd walls-extra/ || return
+    mkdir -p $pkgdir/usr/share/backgrounds/archlabs-extra
+    install -Dm644 *.jpeg $pkgdir/usr/share/backgrounds/archlabs-extra/
+}

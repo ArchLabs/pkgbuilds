@@ -1,0 +1,24 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+# Contributor: Dolores Portalatin <meskarune at gmail dot com>
+# Contributor: burntcookie90 <aur at vishnurajeevan dot com>
+pkgname=archlabs-i3lock-fancy
+pkgver=1.0
+pkgrel=1
+pkgdesc="A script for i3lock-color to blur background, add lock icon, and text."
+arch=('x86_64')
+url="https://github.com/meskarune/i3lock-fancy"
+license=('MIT')
+depends=('coreutils' 'awk' 'bash' 'util-linux' 'imagemagick' 'archlabs-i3lock-color')
+optdepends=('wmctrl: minimize windows before locking'
+            'scrot: alternative screenshot creator'
+            'maim: alternative screenshot creator'
+            'gnome-screenshot: alternative screenshot creator')
+makedepends=('git')
+provides=('i3lock-fancy')
+source=("git+$url.git")
+md5sums=('SKIP')
+
+package() {
+	cd "${pkgname#archlabs-}"
+	DESTDIR="$pkgdir" make install
+}

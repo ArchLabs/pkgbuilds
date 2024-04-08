@@ -1,0 +1,17 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-scripts
+pkgver=1.4.2
+pkgrel=1
+pkgdesc="Helper scripts for use in ArchLabs"
+url="https://bitbucket.org/archlabslinux/scripts"
+arch=('x86_64')
+license=('GPL3')
+groups=('archlabs')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    mkdir -p $pkgdir/usr/bin
+    install -Dm755 scripts/source/* $pkgdir/usr/bin/
+}

@@ -1,0 +1,14 @@
+pkgbase = archlabs-pipemenus
+	pkgdesc = Pipemenus and zenity scripts used in ArchLabs
+	pkgver = 2.7.0
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/pipemenus
+	arch = x86_64
+	license = GPL3
+	depends = archlabs-common
+	depends = zenity
+	depends = python-lxml
+	source = git+https://bitbucket.org/archlabslinux/pipemenus.git
+	sha256sums = SKIP
+
+pkgname = archlabs-pipemenus

@@ -1,0 +1,12 @@
+pkgbase = archlabs-themes
+	pkgdesc = Custom themes for use in ArchLabs
+	pkgver = 1.5.4
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/themes
+	arch = x86_64
+	groups = archlabs
+	source = git+https://bitbucket.org/archlabslinux/themes.git
+	sha256sums = SKIP
+
+pkgname = archlabs-themes
+

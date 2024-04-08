@@ -1,0 +1,15 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-fonts
+pkgver=1.4.1
+pkgrel=1
+pkgdesc="Icon patched fonts for ArchLabs"
+url="https://bitbucket.org/archlabslinux/themes"
+arch=('x86_64')
+source=("git+$url.git")
+sha256sums=('SKIP')
+
+package() {
+    mkdir -p $pkgdir/usr/share/fonts/TTF
+    install -Dm644 themes/Fonts/TTF/* $pkgdir/usr/share/fonts/TTF/
+}

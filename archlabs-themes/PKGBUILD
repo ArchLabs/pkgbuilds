@@ -1,0 +1,20 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-themes
+pkgver=1.5.3
+pkgrel=1
+pkgdesc="Custom themes for use in ArchLabs"
+url="https://bitbucket.org/archlabslinux/themes"
+arch=('x86_64')
+groups=('archlabs')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    cd themes || return
+    mkdir -p $pkgdir/usr/share/{rofi/themes,themes}
+    cp -rf Themes/ArchLabs-Light $pkgdir/usr/share/themes/
+    cp -rf Themes/ArchLabs-Light-Alt $pkgdir/usr/share/themes/
+    cp -rf Themes/ArchLabs-Dark $pkgdir/usr/share/themes/
+    cp -f Rofi/themes/*.rasi $pkgdir/usr/share/rofi/themes/
+}

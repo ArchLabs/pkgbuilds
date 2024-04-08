@@ -1,0 +1,31 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+# Contributor: Dolores Portalatin <meskarune at gmail dot com>
+# Contributor: burntcookie90 <aur at vishnurajeevan dot com>
+pkgname=archlabs-i3lock-color
+pkgver=2.12
+pkgrel=1
+pkgdesc="An improved screenlocker based upon XCB and PAM with color configuration support"
+arch=('x86_64')
+url="https://github.com/PandorasFox/i3lock-color"
+license=('MIT')
+depends=('xcb-util-image' 'xcb-util-xrm' 'pam' 'libev' 'cairo' 'libxkbcommon-x11' 'libjpeg-turbo')
+provides=('i3lock' 'i3lock-color')
+conflicts=('i3lock')
+makedepends=('git')
+source=("git+$url.git")
+md5sums=('SKIP')
+
+build() {
+    cd "${pkgname#archlabs-}"
+    sed -i -e 's:login:system-auth:' pam/i3lock
+    git tag -f "aur-$(git rev-parse --short HEAD)"
+    autoreconf -fi
+    ./configure --prefix="/usr" --sysconfdir="/etc"
+    make
+}
+
+package() {
+    cd "${pkgname#archlabs-}"
+    make DESTDIR="$pkgdir" install
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

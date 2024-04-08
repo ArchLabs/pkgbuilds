@@ -1,0 +1,11 @@
+pkgbase = archlabs-wallpapers
+	pkgdesc = ArchLabs wallpapers
+	pkgver = 1.5.7
+	pkgrel = 1
+	url = https://bitbucket.org/archlabslinux/walls
+	arch = x86_64
+	groups = archlabs
+	source = git+https://bitbucket.org/archlabslinux/walls.git
+	sha256sums = SKIP
+
+pkgname = archlabs-wallpapers

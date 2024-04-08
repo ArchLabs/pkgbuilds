@@ -1,0 +1,24 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-lemonbar
+pkgver=1.4
+pkgrel=1
+pkgdesc="A lightweight xcb based bar with ported xft support."
+arch=('x86_64')
+url="https://gitlab.com/protesilaos/lemonbar-xft"
+license=('MIT')
+depends=('libxcb' 'libxft' 'libx11')
+provides=('bar-aint-recursive' 'lemonbar')
+conflicts=('bar-aint-recursive' 'lemonbar' 'lemonbar-xft-git')
+source=("bar::git+https://gitlab.com/protesilaos/lemonbar-xft.git")
+sha256sums=('SKIP')
+
+build() {
+	cd bar && make
+}
+
+package() {
+	cd bar &&
+		make PREFIX=/usr DESTDIR="$pkgdir" install &&
+		install -D -m644 LICENSE "$pkgdir/usr/share/licenses/lemonbar/LICENSE"
+}

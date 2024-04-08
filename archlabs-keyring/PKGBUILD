@@ -1,0 +1,21 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-keyring
+pkgver=2022.11.11
+pkgrel=1
+pkgdesc='ArchLabs keyring'
+url='https://bitbucket.org/archlabslinux/keyring'
+arch=('x86_64')
+license=(GPL)
+install=${pkgname}.install
+groups=('archlabs')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    cd keyring/ || return
+    mkdir -p $pkgdir/usr/share/pacman/keyrings
+    install -m 644 archlabs-trusted $pkgdir/usr/share/pacman/keyrings
+    install -m 644 archlabs-revoked $pkgdir/usr/share/pacman/keyrings
+    install -m 644 archlabs.gpg $pkgdir/usr/share/pacman/keyrings
+}

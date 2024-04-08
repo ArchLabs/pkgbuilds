@@ -1,0 +1,19 @@
+pkgbase = archlabs-baph
+	pkgdesc = Basic AUR Package Helper
+	pkgver = 1.7
+	pkgrel = 1
+	url = https://bitbucket.org/natemaia/baph
+	arch = x86_64
+	license = GPL
+	depends = awk
+	depends = curl
+	depends = sed
+	depends = coreutils
+	optdepends = git: download AUR packages via git
+	optdepends = sudo: for privilege escalation
+	optdepends = doas: for privilege escalation
+	optdepends = pacman-contrib: for checkupdates
+	source = git+https://bitbucket.org/natemaia/baph.git#tag=v1.7
+	sha256sums = SKIP
+
+pkgname = archlabs-baph

@@ -1,0 +1,18 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-pipemenus
+pkgver=2.7.0
+pkgrel=1
+pkgdesc="Pipemenus and zenity scripts used in ArchLabs"
+url="https://bitbucket.org/archlabslinux/pipemenus"
+arch=('x86_64')
+license=('GPL3')
+depends=('archlabs-common' 'zenity' 'python-lxml')
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package()
+{
+	mkdir -p "$pkgdir/usr/bin"
+    install -Dm755 pipemenus/source/* "$pkgdir/usr/bin/"
+}

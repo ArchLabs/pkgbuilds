@@ -1,0 +1,16 @@
+# Maintainer: Nathaniel Maia <natemaia10@gmail.com>
+
+pkgname=archlabs-skel-fluxbox
+pkgver=1.0.7
+pkgrel=1
+pkgdesc="fluxbox configuration files for ArchLabs"
+url="https://bitbucket.org/archlabslinux/skel"
+arch=('x86_64')
+depends=()
+source=(git+$url.git)
+sha256sums=('SKIP')
+
+package() {
+    mkdir -p $pkgdir/etc/skel
+    cp -rf skel/fluxbox-home/. $pkgdir/etc/skel/
+}
